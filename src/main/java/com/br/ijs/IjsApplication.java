@@ -1,4 +1,4 @@
-package com.br.ijs.ijs;
+package com.br.ijs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
