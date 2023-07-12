@@ -2,6 +2,7 @@ package com.br.ijs.service;
 
 import com.br.ijs.entities.dto.GameDTO;
 import com.br.ijs.entities.dto.GameMinDTO;
+import com.br.ijs.projection.GameMinProjection;
 import com.br.ijs.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,11 @@ public class GameService {
     @Transactional(readOnly = true)
     public Optional<GameDTO> findById(Long id) {
         return Optional.of(new GameDTO(gameRepository.findById(id).get()));
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId){
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
+        return result.stream().map(x -> new GameMinDTO(x)).toList();
     }
 }
