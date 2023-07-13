@@ -1,6 +1,6 @@
 # ijs - event spring
 
-Course of spring
+Course ministrade by Nélio Alves
 
 ## 🚀 Começando
 
